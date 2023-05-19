@@ -8,14 +8,17 @@ const comprarCarrito = document.getElementById('comprar-carrito')
 
 const precioTotal = document.getElementById('precio-total')
 
+// Si carrito no existe(null), lo crea vacío.
+if(localStorage.getItem('carrito') === null) localStorage.setItem("carrito", "[]")
+
+let carrito = JSON.parse(localStorage.getItem('carrito'))
+
 const mensaje = (mensaje) => {
     Toastify({
         text: mensaje,
         duration: 3000
         }).showToast();
 }
-
-let carrito = []
 
 document.addEventListener('DOMContentLoaded', () => {
     if(localStorage.getItem('carrito')){
@@ -72,6 +75,7 @@ const eliminarDelCarrito = (prodId) => {
     const item = carrito.find((prod) => prod.id === prodId)
     const indice = carrito.indexOf(item)
     carrito.splice(indice, 1)
+    localStorage.setItem("carrito", JSON.stringify(carrito))
     mensaje("Se ha eliminado un producto del carrito.")
     actualizarCarrito()
 }
