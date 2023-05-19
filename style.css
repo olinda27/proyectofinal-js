@@ -67,6 +67,21 @@ h1, h2{
     text-decoration: underline ;
 }
 
+#buttonCart{
+    width: 50px;
+    border: none;
+    border-radius: 10px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(130, 148, 196);
+    border: solid 1px black;
+}
+
+#buttonCart:hover{
+    background-color: rgb(172, 177, 214);
+}
+
 #header img{
     width: 100%;
 }
@@ -87,13 +102,21 @@ h1, h2{
 
 .productoEnCarrito{
     display: flex;
-    flex-direction: column;
-    margin: 20px;
+    justify-content: space-around;
+    width: 100%;
+    margin: 5px;
     background-color: rgb(130, 148, 196);
+    font-size: 15px;
+    height: 100px;
     padding: 20px;
     border-radius: 10px;
     line-height: 40px;
     align-items: center;
+}
+
+.productoEnCarrito p{
+    margin: 10px;
+    /* padding: 20px; */
 }
 
 .productoEnCarrito button{
@@ -117,7 +140,7 @@ h1, h2{
 }
 
 #botones button{
-    width: 100px;
+    width: 150px;
     padding: 10px;
     border-radius: 10px;
     border: solid 2px black;
@@ -125,7 +148,7 @@ h1, h2{
 }
 
 #botones button:hover{
-    background-color: darkturquoise;
+    background-color: rgb(130, 148, 196);
 }
 
 #boton-carrito:hover {
@@ -137,13 +160,13 @@ h1, h2{
     outline: none;
 }
 
-#carrito-estilo{
+/* #carrito-estilo{
     background-color: rgb(172, 177, 214);
     margin: 50px;
     border-radius: 30px;
     padding: 10px;
     border: solid 3px rgb(130, 148, 196);
-}
+} */
 
 .precioProducto{
     font-size: 25px;
