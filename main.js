@@ -27,12 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
 botonVaciar.addEventListener('click', () =>{
     carrito.length = 0
     mensaje("El carrito está vacío.")
+    localStorage.setItem('carrito', JSON.stringify(carrito))
     actualizarCarrito()
 })
 
 comprarCarrito.addEventListener('click', () => {
     carrito.length = 0
     mensaje("Gracias por su compra.")
+    localStorage.setItem('carrito', JSON.stringify(carrito))
     actualizarCarrito()
 })
 
@@ -93,6 +95,6 @@ const actualizarCarrito = () => {
         localStorage.setItem('carrito', JSON.stringify(carrito))
     })
 
-    precioTotal.innerText = carrito.reduce((acc, prod) => acc + (prod.precio * prod.cantidad), 0)
+    precioTotal.innerText = String(new Intl.NumberFormat('de-DE').format(carrito.reduce((acc, prod) => acc + (prod.precio * prod.cantidad), 0)))
 }
 
